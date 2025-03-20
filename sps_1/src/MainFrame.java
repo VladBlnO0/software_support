@@ -1,45 +1,39 @@
+//Deleted not used import
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.concurrent.ThreadLocalRandom;
 import java.io.*;
-import java.util.Scanner;
-//Changes here
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class MainFrame extends JFrame {
+    //Grouped by type
     private JTabbedPane Create_DeletePane;
-    private JTextField D_Phone_NumberTextField;
-    private JTextField D_Full_NameTextField;
-    private JTextField D_Company_NameTextField;
-    private JTextField Con_WeightTextField;
-    private JButton CreateButton;
-    private JTextField D_AddressTextField;
-    private JTextField D_Work_ExperienceTextField;
-    private JTextField Cli_Company_NameTextField;
-    private JTextField Cli_AddressTextField;
-    private JTextField Cli_Phone_NumberTextField;
-    private JComboBox Con_Type_of_CargoComboBox;
-    private JTextField Con_Delivery_TimeTextField;
-    private JTextField Con_Dispatch_StationTextField;
-    private JTextField Con_Arrival_StationTextField;
-    private JTextField Con_Date_of_ConclusionTextField;
-    private JButton DeleteButton;
-    private JComboBox Classes_ComboBox;
+    private JTextField D_Phone_NumberTextField,
+            D_Full_NameTextField,
+            D_Company_NameTextField,
+            D_AddressTextField,
+            D_Work_ExperienceTextField,
+            Con_WeightTextField,
+            Cli_Company_NameTextField,
+            Cli_AddressTextField,
+            Cli_Phone_NumberTextField;
+    private JComboBox Con_Type_of_CargoComboBox,
+            Classes_ComboBox,
+            Requests_ComboBox;
+    private JTextField Con_Delivery_TimeTextField,
+            Con_Dispatch_StationTextField,
+            Con_Arrival_StationTextField,
+            Con_Date_of_ConclusionTextField;
+    private JButton CreateButton,
+            DeleteButton,
+            RequestButton,
+            ShowButton;
     private JPanel myFrame;
-    private JComboBox Requests_ComboBox;
-    private JButton RequestButton;
-    private JButton ShowButton;
 
     interface Printable {
         void Show(Person obj);
     }
 
-    static class Cost_Calc {
-        private static double tariff = 1.5;
-
-        public double getCost(double weight) {
-            return weight * tariff;
-        }
-    }
+    //Deleted Cost_Calc
 
     static class Insurance_Amount_Calc {
         private String[] Cargo_List = {"Consumer", "Special", "Hazardous"};
@@ -174,14 +168,13 @@ public class MainFrame extends JFrame {
 
         public Contract(String Type_of_Cargo, int Delivery_Time, String Dispatch_Station,
                         String Arrival_Station, double Weight, String Date_of_Conclusion, int Contract_Id) {
-            Cost_Calc calc1 = new Cost_Calc();
             Insurance_Amount_Calc calc2 = new Insurance_Amount_Calc();
             this.Type_of_Cargo = Type_of_Cargo;
             this.Delivery_Time = Delivery_Time;
             this.Dispatch_Station = Dispatch_Station;
             this.Arrival_Station = Arrival_Station;
             this.Weight = Weight;
-            this.Cost = calc1.getCost(Weight);
+            this.Cost = Weight * 1.5;
             this.Insurance_Amount = calc2.Insurance_Calc(Type_of_Cargo, this.Cost);
             this.Date_of_Conclusion = Date_of_Conclusion;
             this.Contract_Id = Contract_Id;
