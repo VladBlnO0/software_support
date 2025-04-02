@@ -7,8 +7,14 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Dispatcher> dispatchers = new ArrayList<>();
 
+        Contract contract1 = new Contract("Consumer", 12, "Con_Dispatch_Station", "Con_Arrival_Station", 12.5, "Con_Date_of_Conclusion");
+        Client client1 = new Client("Cli_Company_Name", "Cli_Address", "Cli_Phone_Number","2Cli_Phone_Number", contract1);
+        Dispatcher new_disp1 = new Dispatcher("Company", "D_Address", "D_Phone_Number", "D_Full_Name", 12, client1);
+
+        dispatchers.add(new_disp1);
+
         Contract contract = new Contract("Consumer", 12, "Con_Dispatch_Station", "Con_Arrival_Station", 12.5, "Con_Date_of_Conclusion");
-        Client client = new Client("Cli_Company_Name", "Cli_Address", "Cli_Phone_Number", contract);
+        Client client = new Client("Cli_Company_Name", "Cli_Address", "Cli_Phone_Number","2Cli_Phone_Number", contract);
         Dispatcher new_disp = new Dispatcher("Company", "D_Address", "D_Phone_Number", "D_Full_Name", 12, client);
 
         dispatchers.add(new_disp);
@@ -46,6 +52,15 @@ public class Main {
                     //Average delivery time
                     AverageTime(dispatchers);
                     break;
+                case 6:
+                    //New method
+                    new ContractIDComparator(dispatchers);
+                    break;
+                case 7:
+                    //TDD
+                    dispatchers.forEach(dispatcher -> dispatcher.client.Info());
+                    break;
+
             }
         } while (ch!=9);
 
