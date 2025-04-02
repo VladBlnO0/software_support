@@ -1,7 +1,7 @@
 package main;
 
 public class Client {
-    private String Company_Name, Address, Phone_Number;
+    private final String Company_Name, Address, Phone_Number;
     Contract contr;
 
     Client(String Company_Name, String Address, String Phone_Number, Contract contr) {

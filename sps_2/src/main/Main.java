@@ -1,6 +1,5 @@
 package main;
 
-import java.io.*;
 import java.util.*;
 import java.util.Objects;
 
@@ -32,7 +31,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
-        int ch = 0;
+        int ch;
         do {
             System.out.println("\n");
 
@@ -85,7 +84,7 @@ public class Main {
         }
     }
     private static void LongestTime (ArrayList <Dispatcher> dispatchers) {
-        int max = dispatchers.get(0).client.contr.getDelivery_Time();
+        int max = dispatchers.getFirst().client.contr.getDelivery_Time();
         for (Dispatcher value : dispatchers) {
             if (value.client.contr.getDelivery_Time() > max)
                 max = value.client.contr.getDelivery_Time();
