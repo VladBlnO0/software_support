@@ -3,23 +3,25 @@ package main;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Contract {
-    private final double Insurance_Amount, Cost, Weight;
-    private final int Delivery_Time, Contract_Id;
+    private final double Insurance_Amount;
+    private final double Weight, Cost;
+
+    private final int Contract_Id, Delivery_Time;
     private final String Type_of_Cargo, Dispatch_Station, Arrival_Station, Date_of_Conclusion;
 
-    Contract(String Type_of_Cargo, int Delivery_Time, String Dispatch_Station,
-             String Arrival_Station, double Weight, String Date_of_Conclusion) {
+    public Contract(String Type_of_Cargo, String Delivery_Time, String Dispatch_Station,
+                    String Arrival_Station, String Weight, String Date_of_Conclusion) {
         this.Type_of_Cargo = Type_of_Cargo;
-        this.Delivery_Time = Delivery_Time;
+        this.Delivery_Time = Integer.parseInt(Delivery_Time);
         this.Dispatch_Station = Dispatch_Station;
         this.Arrival_Station = Arrival_Station;
-        this.Weight = Weight;
-        this.Cost = Weight * 1.5;
+        this.Weight = Double.parseDouble(Weight);
+        this.Cost = this.Weight * 1.5;
         this.Insurance_Amount = switch (Type_of_Cargo) {
-            case "Consumer" -> Cost / 25;
-            case "Special" -> Cost / 35;
-            case "Hazardous" -> Cost / 50;
-            default -> Cost / 15;
+            case "Consumer" -> this.Cost / 25;
+            case "Special" -> this.Cost / 35;
+            case "Hazardous" -> this.Cost / 50;
+            default -> this.Cost / 15;
         };
         this.Contract_Id = ThreadLocalRandom.current().nextInt(1000, 8000 + 1);
 

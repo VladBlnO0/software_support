@@ -5,7 +5,7 @@ public class Client {
     private final String Second_Phone_Number;
     Contract contr;
 
-    Client(String Company_Name, String Address, String Phone_Number, String Second_Phone_Number, Contract contr) {
+    public Client(String Company_Name, String Address, String Phone_Number, String Second_Phone_Number, Contract contr) {
         this.Company_Name = Company_Name;
         this.Address = Address;
         this.Phone_Number = Phone_Number;
@@ -16,6 +16,11 @@ public class Client {
 
         this.contr = contr;
     }
+
+    public String getCompany_Name() {
+        return Company_Name;
+    }
+
     void Info() {
         System.out.printf("%nPhone_Number: %sf", Phone_Number);
         System.out.printf("%nSecond_Phone_Number: %s", Second_Phone_Number);
