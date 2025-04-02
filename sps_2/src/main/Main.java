@@ -5,26 +5,11 @@ import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        String D_Company_Name = "Company";
-        String D_Address = "D_Address";
-        String D_Phone_Number = "D_Phone_Number";
-        String D_Full_Name = "D_Full_Name";
-        int D_Work_Experience = Integer.parseInt("12");
-        String Cli_Company_Name = "Cli_Company_Name";
-        String Cli_Address = "Cli_Address";
-        String Cli_Phone_Number = "Cli_Phone_Number";
-        String Con_Type_of_Cargo = "Consumer";
-        int Con_Delivery_Time = Integer.parseInt("12");
-        String Con_Dispatch_Station = "Con_Dispatch_Station";
-        String Con_Arrival_Station = "Con_Arrival_Station";
-        double Con_Weight = Double.parseDouble("12.5");
-        String Con_Date_of_Conclusion = "Con_Date_of_Conclusion";
-
         ArrayList<Dispatcher> dispatchers = new ArrayList<>();
 
-        Contract contract = new Contract(Con_Type_of_Cargo, Con_Delivery_Time, Con_Dispatch_Station, Con_Arrival_Station, Con_Weight, Con_Date_of_Conclusion);
-        Client client = new Client(Cli_Company_Name, Cli_Address, Cli_Phone_Number, contract);
-        Dispatcher new_disp = new Dispatcher(D_Company_Name, D_Address, D_Phone_Number, D_Full_Name, D_Work_Experience, client);
+        Contract contract = new Contract("Consumer", 12, "Con_Dispatch_Station", "Con_Arrival_Station", 12.5, "Con_Date_of_Conclusion");
+        Client client = new Client("Cli_Company_Name", "Cli_Address", "Cli_Phone_Number", contract);
+        Dispatcher new_disp = new Dispatcher("Company", "D_Address", "D_Phone_Number", "D_Full_Name", 12, client);
 
         dispatchers.add(new_disp);
         //dispatchers.remove(new_disp);
