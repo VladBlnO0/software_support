@@ -1,13 +1,11 @@
 package main;
 
-import java.io.*;
-import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Contract {
-    private double Insurance_Amount, Cost, Weight;
-    private int Delivery_Time, Contract_Id;
-    private String Type_of_Cargo, Dispatch_Station, Arrival_Station, Date_of_Conclusion;
+    private final double Insurance_Amount, Cost, Weight;
+    private final int Delivery_Time, Contract_Id;
+    private final String Type_of_Cargo, Dispatch_Station, Arrival_Station, Date_of_Conclusion;
 
     Contract(String Type_of_Cargo, int Delivery_Time, String Dispatch_Station,
              String Arrival_Station, double Weight, String Date_of_Conclusion) {
