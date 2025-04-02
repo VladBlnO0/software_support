@@ -144,7 +144,7 @@ public class MainFrame extends JFrame {
             dispatchers.add(new_disp);
             String name = contract.getContract_Id() + ".txt";
             try (FileWriter writer = new FileWriter(name, false)) {
-                writer.write("\nContract Id: " + contract.getContract_Id());
+                writer.write("\nmain.Contract Id: " + contract.getContract_Id());
                 writer.write("\n\tDispatcher");
                 writer.write("\nCompany Name: " + D_Company_Name);
                 writer.write("\nAddress: " + D_Address);
@@ -155,7 +155,7 @@ public class MainFrame extends JFrame {
                 writer.write("\nCompany Name: " + Cli_Company_Name);
                 writer.write("\nAddress: " + Cli_Address);
                 writer.write("\nPhone Number: " + Cli_Phone_Number);
-                writer.write("\n\tContract");
+                writer.write("\n\tmain.Contract");
                 writer.write("\nType of Cargo: " + Con_Type_of_Cargo);
                 writer.write("\nDelivery Time: " + Con_Delivery_Time);
                 writer.write("\nDispatch Station: " + Con_Dispatch_Station);

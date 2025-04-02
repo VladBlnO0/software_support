@@ -68,7 +68,7 @@
             <properties>
               <horizontalAlignment value="0"/>
               <horizontalTextPosition value="0"/>
-              <text value="Contract"/>
+              <text value="main.Contract"/>
             </properties>
           </component>
         </children>
