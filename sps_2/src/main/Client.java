@@ -7,18 +7,19 @@ public class Client {
 
     public Client(String Company_Name, String Address, String Phone_Number, String Second_Phone_Number, Contract contr) {
 
-        if (Company_Name == null || Company_Name.length() < 1 || Company_Name.length() > 500) {throw new IllegalArgumentException("Invalid data");}
+        if (Company_Name == null || Company_Name.isEmpty() || Company_Name.length() > 500) {throw new IllegalArgumentException("Invalid data");}
         else {this.Company_Name = Company_Name;}
 
-        if (Address == null || Address.length() < 1 || Address.length() > 500) {throw new IllegalArgumentException("Invalid data");}
+        if (Address == null || Address.isEmpty() || Address.length() > 500) {throw new IllegalArgumentException("Invalid data");}
         else {this.Address = Address;}
 
-        if (Phone_Number == null || Phone_Number.length() < 1 || Phone_Number.length() > 500) {throw new IllegalArgumentException("Invalid data");}
+        if (Phone_Number == null || Phone_Number.isEmpty() || Phone_Number.length() > 500) {throw new IllegalArgumentException("Invalid data");}
+        else if (Phone_Number.equals(Second_Phone_Number)) {throw new IllegalArgumentException("Equal Data");}
         else {this.Phone_Number = Phone_Number;}
 
         //TDD
-        if (Second_Phone_Number == null || Second_Phone_Number.length() < 1 || Second_Phone_Number.length() > 500) {throw new IllegalArgumentException("Invalid data");}
-        else if (this.Phone_Number = Second_Phone_Number) {throw new IllegalArgumentException("Invalid data");}
+        if (Second_Phone_Number == null || Second_Phone_Number.isEmpty() || Second_Phone_Number.length() > 500) {throw new IllegalArgumentException("Invalid data");}
+        else if (Second_Phone_Number.equals(Phone_Number)) {throw new IllegalArgumentException("Invalid data");}
         else {this.Second_Phone_Number = Second_Phone_Number;}
 
         this.contr = contr;

@@ -40,12 +40,12 @@ public class Contract {
             throw new IllegalArgumentException("Invalid data");
         }
 
-        if (Dispatch_Station == null || Dispatch_Station.length() < 1 || Dispatch_Station.length() > 500) {throw new IllegalArgumentException("Invalid data");}
+        if (Dispatch_Station == null || Dispatch_Station.isEmpty() || Dispatch_Station.length() > 500) {throw new IllegalArgumentException("Invalid data");}
         else if (Dispatch_Station == Arrival_Station) {throw new IllegalArgumentException("Equal Data");}
         else {this.Dispatch_Station = Dispatch_Station;}
 
 
-        if (Arrival_Station == null || Arrival_Station.length() < 1 || Arrival_Station.length() > 500) {throw new IllegalArgumentException("Invalid data");}
+        if (Arrival_Station == null || Arrival_Station.isEmpty() || Arrival_Station.length() > 500) {throw new IllegalArgumentException("Invalid data");}
         else if (Arrival_Station == Dispatch_Station) {throw new IllegalArgumentException("Equal Data");}
         else {this.Arrival_Station = Arrival_Station;}
 
