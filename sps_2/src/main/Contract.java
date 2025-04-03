@@ -20,7 +20,8 @@ public class Contract {
     private final double Insurance_Amount;
     private final double Weight, Cost;
 
-    private final int Contract_Id, Delivery_Time;
+    private int Contract_Id;
+    private final int Delivery_Time;
     private final String Type_of_Cargo, Dispatch_Station, Arrival_Station;
     private final Date Date_of_Conclusion;
 
@@ -87,6 +88,7 @@ public class Contract {
     public String getArrival_Station() {return Arrival_Station;}
     public int getDelivery_Time() {return Delivery_Time;}
     public int getContract_Id() {return Contract_Id;}
+    public void setContract_Id(int id) {this.Contract_Id=id;}
 
     void Info() {
         System.out.printf("%nInsurance amount: %4.2f", Insurance_Amount);

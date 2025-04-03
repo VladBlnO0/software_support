@@ -3,7 +3,7 @@ package main;
 public class Client {
     private final String Company_Name, Address, Phone_Number;
     private final String Second_Phone_Number;
-    Contract contr;
+    public Contract contr;
 
     public Client(String Company_Name, String Address, String Phone_Number, String Second_Phone_Number, Contract contr) {
 
@@ -28,6 +28,10 @@ public class Client {
     public String getCompany_Name() {
         return Company_Name;
     }
+    public String getSecond_Phone_Number() {
+        return Second_Phone_Number;
+    }
+
 
     void Info() {
         System.out.printf("%nPhone_Number: %sf", Phone_Number);

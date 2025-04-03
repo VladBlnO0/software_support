@@ -9,7 +9,7 @@ public class Dispatcher {
     }
 
     private final int Work_Experience;
-    Client client;
+    public Client client;
 
     public Dispatcher(String Company_Name, String Address, String Phone_Number, String Full_Name, String Work_Experience, Client client) {
 

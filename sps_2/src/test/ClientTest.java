@@ -15,6 +15,25 @@ class ClientTest {
 
         Assertions.assertEquals("Company_Name", client.getCompany_Name());
     }
+    //TDD
+    @Test
+    void testValidClientSN() {
+        Client client = new Client("Company_Name", "Address", "Phone_Number","Second_Phone_Number", contract);
+
+        Assertions.assertEquals("Second_Phone_Number", client.getSecond_Phone_Number());
+    }
+    @Test
+    void testInvalidClientSameSN() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            Client client = new Client("Company_Name", "Address", "Phone_Number","Phone_Number", contract);
+        }, "The class should throw an exception");
+    }
+    @Test
+    void testInvalidClientNullSN() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            Client client = new Client("Company_Name", "Address", "Phone_Number",null, contract);
+        }, "The class should throw an exception");
+    }
 
     @Test
     void testInvalidClientCreation() {
