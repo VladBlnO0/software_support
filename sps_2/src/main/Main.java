@@ -6,7 +6,6 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Dispatcher> dispatchers = getDispatchers();
-        //dispatchers.remove(new_disp);
 
         Scanner input = new Scanner(System.in);
 
@@ -49,21 +48,30 @@ public class Main {
                     dispatchers.forEach(dispatcher -> dispatcher.client.Info());
                     break;
 
+                case 10:
+                    //New object
+                    Contract contract3 = new Contract("Consumer", "12", "Con_Dispatch_Station", "Con_Arrival_Station", "12.5", "01.01.2025");
+                    Client client3 = new Client("Cli_Company_Name", "Cli_Address", "Cli_Phone_Number","2Cli_Phone_Number", contract3);
+                    Dispatcher new_disp3 = new Dispatcher("Company", "D_Address", "D_Phone_Number", "D_Full_Name", "12", client3);
+
+                    dispatchers.add(new_disp3);
+
+                    break;
             }
-        } while (ch!=9);
+        } while (ch!=99);
 
     }
 
     private static ArrayList<Dispatcher> getDispatchers() {
         ArrayList<Dispatcher> dispatchers = new ArrayList<>();
 
-        Contract contract1 = new Contract("Consumer", "12", "Con_Dispatch_Station", "Con_Arrival_Station", "12.5", "Con_Date_of_Conclusion");
+        Contract contract1 = new Contract("Consumer", "12", "Con_Dispatch_Station", "Con_Arrival_Station", "12.5", "01.01.2025");
         Client client1 = new Client("Cli_Company_Name", "Cli_Address", "Cli_Phone_Number","2Cli_Phone_Number", contract1);
         Dispatcher new_disp1 = new Dispatcher("Company", "D_Address", "D_Phone_Number", "D_Full_Name", "12", client1);
 
         dispatchers.add(new_disp1);
 
-        Contract contract = new Contract("Consumer", "12", "Con_Dispatch_Station", "Con_Arrival_Station", "12.5", "Con_Date_of_Conclusion");
+        Contract contract = new Contract("Consumer", "12", "Con_Dispatch_Station", "Con_Arrival_Station", "12.5", "01.02.2025");
         Client client = new Client("Cli_Company_Name", "Cli_Address", "Cli_Phone_Number","2Cli_Phone_Number", contract);
         Dispatcher new_disp = new Dispatcher("Company", "D_Address", "D_Phone_Number", "D_Full_Name", "12", client);
 
