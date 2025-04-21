@@ -5,8 +5,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class UserProfileManager {
     private ConcurrentHashMap<String, UserProfile> users = new ConcurrentHashMap<>();
 
-    public void addUser(String username, String email) {
-        users.put(username, new UserProfile(username, email));
+    public void addUser(String username, String email, int age) {
+        users.put(username, new UserProfile(username, email, age));
     }
 
     public void updateEmail(String username, String newEmail) {
